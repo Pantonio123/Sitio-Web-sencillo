@@ -21,6 +21,8 @@ export class MoviesComponent {
   async getMovies(): Promise<void> {
     this.movies = await this.moviesService.getMovies();
   }
-  
+  cleanId(id: any): string {
+    return String(id || '1').replace(/[^a-zA-Z0-9-]/g, ''); 
+  }
 }
 

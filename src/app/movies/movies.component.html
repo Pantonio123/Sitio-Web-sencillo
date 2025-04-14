@@ -37,7 +37,7 @@
                 {{movie.synopsis}}
             </td>
             <td>
-                <a [routerLink]="['/movies', movie.id]" class="btn btn-info text-nowrap">Más info</a>
+                <a [routerLink]="['/movies', cleanId(movie.id)]" class="btn btn-info text-nowrap">Más info</a>
             </td>
         </tr>
     }
