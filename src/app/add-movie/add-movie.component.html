@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <h2>Agregar Nueva Película</h2>
+  <form (ngSubmit)="addMovie()">
+    <div class="mb-3">
+      <label for="title">Título</label>
+      <input [(ngModel)]="movie.title" id="title" name='title' required="true" type="text" />
+    </div>
+    <div class="mb-3">
+      <label for="synopsis">Sinopsis</label>
+      <textarea id="synopsis" [(ngModel)]="movie.synopsis" name="synopsis" required="true"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="year">Año</label>
+      <input type="number" id="year" [(ngModel)]="movie.year" name="year" required="true" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+  </div>
