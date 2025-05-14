@@ -11,12 +11,12 @@ export class MoviesService {
   constructor() {}
 
   async getMovies(): Promise<any[]>{
-    const data = await fetch(this.moviesUrl);
+    const data = await fetch(this.moviesUrl, { mode: 'cors' });
     return await data.json();
   }
 
   async getMovie(id: number): Promise<any[]>{
-    const data = await fetch(this.moviesUrl + id);
+    const data = await fetch(this.moviesUrl + id, { mode: 'cors'});
     return await data.json();
   }
 
@@ -27,6 +27,7 @@ export class MoviesService {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
+      mode: 'cors',
       body: JSON.stringify(movieData),
     })
   }
@@ -37,6 +38,7 @@ export class MoviesService {
       headers: {
         'Content-Type': 'application/json',
       },
+      mode: 'cors',
       body: JSON.stringify(movieData),
     })
   }
