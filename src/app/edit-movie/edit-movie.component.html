@@ -10,9 +10,15 @@
       <textarea id="synopsis" [(ngModel)]="movie.synopsis" name="synopsis" required="true"></textarea>
     </div>
     <div class="mb-3">
+      <label for="cover">Imagen</label>
+      <textarea id="cover" [(ngModel)]="movie.cover" name="cover" required="true"></textarea>
+    </div>
+    <div class="mb-3">
       <label for="year">Año</label>
       <input type="number" id="year" [(ngModel)]="movie.year" name="year" required="true" />
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
   </form>
+  <br><button type="button" class="btn btn-primary" (click)="deleteMovie()">Eliminar</button>
+  <br><button type="button" class="btn btn-primary" (click)="returnMovies()">Regresar</button>
 </div>

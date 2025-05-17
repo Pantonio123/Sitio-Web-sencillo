@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class MoviesService {
 
-  private moviesUrl = 'https://three-2-sitio-web-sencillo-a5n1.onrender.com/api/movies';
-  // private moviesUrl = 'http://127.0.0.1:8000/api/movies/';
+  //private moviesUrl = 'https://three-2-sitio-web-sencillo-a5n1.onrender.com/api/movies';
+  private moviesUrl = 'http://127.0.0.1:8000/api/movies/';
 
   constructor() {}
 
@@ -42,4 +42,24 @@ export class MoviesService {
       body: JSON.stringify(movieData),
     })
   }
+  async DeleteMovie(id: number, movieData: any): Promise<void> {
+    await fetch(this.moviesUrl + id, {
+    method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'cors',
+      body: JSON.stringify(movieData),
+    })
+  }
+  async return(id: number, movieData: any): Promise<void> {
+    await fetch(this.moviesUrl + id, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'cors',
+      body: JSON.stringify(movieData),
+    })
+  }
+  
 }

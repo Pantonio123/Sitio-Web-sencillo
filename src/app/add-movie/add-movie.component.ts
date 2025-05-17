@@ -13,15 +13,28 @@ export class AddMovieComponent {
   movie = {
     title: '',
     synopsis: '',
-    cover: 'image.png',
+    cover: '',
     year: null,
   };
 
   constructor(private moviesService: MoviesService, private router: Router) {}
 
   async addMovie(): Promise<void> {
-    await this.moviesService.addMovie(this.movie);
-    alert('Película agregada con éxito');
-    this.router.navigate(['/movies']);
+    if (this.isMovieValid()) {
+      await this.moviesService.addMovie(this.movie);
+      alert('Película agregada con éxito');
+      this.router.navigate(['/movies']);
+    }
+    
   }
+
+  isMovieValid(): boolean {
+    const isValid = !!(this.movie.title && this.movie.synopsis && this.movie.year && this.movie.cover);
+
+    if (!isValid) {
+      alert('Por favor, completa todos los campos.');
+    }
+
+    return isValid;
+  };
 }
