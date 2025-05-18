@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MoviesService {
 
-  private moviesUrl = 'https://three-2-sitio-web-sencillo-a5n1.onrender.com/api/movies/';
+  private moviesUrl = 'https://three-2-sitio-web-sencillo-a5n1.onrender.com/api/movies';
   //private moviesUrl = 'http://127.0.0.1:8000/api/movies/';
 
   constructor() {}
